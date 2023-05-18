@@ -76,11 +76,13 @@ string cotillon_establecimento::get_direccion() {
 
 cotillon_establecimento::~cotillon_establecimento() {
 
+    delete productos;
+
 }
 
 bool cotillon_establecimento::encontrar_producto(string  produc) {
 
-    /*list<producto>::iterator it = productos->begin();
+    list<producto>::iterator it = productos->begin();
     int i = 0;
 
     while (it != productos->end())
@@ -92,7 +94,6 @@ bool cotillon_establecimento::encontrar_producto(string  produc) {
         i++;  
         it._Ptr = it._Ptr->_Next;
     }
-    */
     return false;
   
 }

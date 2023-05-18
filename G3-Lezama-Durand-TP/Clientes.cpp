@@ -38,6 +38,7 @@ void Clientes::AgregarProducto(producto Nombre, unsigned int cant){
 
 void Clientes::AlquilarDisfraz(Disfraz Nombre, unsigned int cant){
 
+
 }
 
 carrito* Clientes::get_carro()

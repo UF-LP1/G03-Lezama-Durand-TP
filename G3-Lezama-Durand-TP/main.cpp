@@ -41,17 +41,25 @@ int main() {
 
 	Clientes Saul(1, "saul Lezama", 95236478, "saul@gmail.com");
 
+	Clientes Emiliana(2, "emiliana janin", 30256478, "emiliana@gmail.com");
 	try
 	{
 		Saul.AgregarProducto(globo, 7);
 		Saul.AgregarProducto(chupeta, 1);
 		Saul.AgregarProducto(vaso, 2);
 		Saul.AgregarProducto(m_cupcakes, 4);
+
+		Emiliana.AgregarProducto(caramelo, 1);
+		Emiliana.AgregarProducto(palillo, 10);
+		Emiliana.AgregarProducto(vaso,4);
 	}
 	catch (invalid_argument& e) {
 		cerr << e.what() << endl;
 
 	}
+
+	Emiliana.AlquilarDisfraz(rey, 1);
+
 	encargado Maria("Maria Durand", 98563214, "de lunes a domingo", "maria@gmail.com");
 	unsigned int metodo= Maria.cobrar();
 
