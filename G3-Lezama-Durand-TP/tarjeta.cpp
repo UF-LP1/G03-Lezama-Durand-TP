@@ -16,7 +16,7 @@ Tarjeta::~Tarjeta()
 string Tarjeta::efectuar_pago()
 {
     stringstream salida;
-    salida << "usted realizo el pagó con la tarjeta: " << this->nombre << " " << this->banco << "monto: " << this->monto << endl
+    salida << "usted realizo el pagó con la tarjeta: " << this->nombre << " " << this->banco << " monto: " << this->monto <<"$"<< endl
         << "los prodoctos ya comprados son: " << endl;
 
     for (producto i : this->carro->get_lista())

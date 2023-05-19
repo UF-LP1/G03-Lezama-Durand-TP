@@ -60,6 +60,11 @@ void encargado::realizar_pago(unsigned int metodo, unsigned int monto, carrito *
 			unsigned int monto_i;
 			cout << "el monto es: " << monto << " ingrese su efectivo: " << endl;
 			cin >> monto_i;
+			
+			while (monto_i < monto) {
+				cout << "falta dinero, el monto es: $"<<monto<<" le devolvemos su dinero, ingrese de nuevo su efectivo: " << endl;
+				cin >> monto_i;
+			}
 
 			efectivo dinero(monto, monto_i, c);
 			dinero.imprimir();

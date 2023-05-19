@@ -13,7 +13,7 @@
 
 class Clientes: public persona {
 private:
-    unsigned int Nro_cliente;
+    static unsigned int Nro_cliente;
     carrito Micarrito;
 public: 
     
@@ -22,7 +22,8 @@ public:
  * @param DNI
  * @param Contacto
  */
-Clientes(unsigned int Nro, string nombre, unsigned int DNI, string Contacto);
+
+Clientes(string nombre, unsigned int DNI, string Contacto);
 ~Clientes();
 /**
  * @param Nombre
@@ -31,10 +32,9 @@ Clientes(unsigned int Nro, string nombre, unsigned int DNI, string Contacto);
  */
 void AgregarProducto(producto Nombre, unsigned int cant);
 void AlquilarDisfraz(Disfraz Nombre, string fecha);
-
 carrito* get_carro();
-unsigned int get_nro();
-
+static unsigned int get_nro();
+static void set_nro(unsigned int nro);
 };
 
 #endif //_CLIENTES_H

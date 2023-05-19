@@ -16,10 +16,6 @@
 #include "tarjeta.h"
 #include "efectivo.h"
 
-
-//si en efectivo el pago es menor 
-//static
-
 int main() {
 	list<producto> lista;
 	//vamos a crear unos objetos tipo productos para testear el metodo :)
@@ -32,6 +28,7 @@ int main() {
 	producto palillo("palillo",70, 12, 356029, "tramontina");
 	moldes m_cupcakes("cupcake",cupcakes, 12, "plastico", 45, 577888, 450, "colombraro");
 
+	//añadimos los productos a la lista
 	lista.push_back(vajilla);
 	lista.push_back(globo);
 	lista.push_back(chupeta);
@@ -39,16 +36,23 @@ int main() {
 	lista.push_back(vaso);
 	lista.push_back(palillo);
 	lista.push_back(m_cupcakes);
-	//lista.push_back(d_chololate);
+	lista.push_back(rey);
 
-	Clientes Saul(1, "saul Lezama", 95236478, "saul@gmail.com");
-	Clientes Emiliana(2, "emiliana janin", 30256478, "emiliana@gmail.com");
+	unsigned int ticket = 1;
+	
+	Clientes Saul("saul Lezama", 95236478, "saul@gmail.com");
+	Clientes Emiliana("emiliana janin", 30256478, "emiliana@gmail.com");
+
+	Clientes::set_nro(ticket);
+
 	encargado Maria("Maria Durand", 98563214, "de lunes a domingo", "maria@gmail.com");
 	mostraddor Isabella("Isabella Ferrari", 94114300,"lunes a domingos", "Isabella@gmail.com",Saul.get_nro());
 
 	Isabella.LlamarCliente();
 
-	//for
+	//intentamos hacer el for con el try-catch pero no creo que
+	//nos iba a funcionar porque nosotros no añadimos de a uno, sino que añadimos de una la cantidad
+	//tal vez no sea la forma mas eficiente pero se intentó
 	try
 	{
 		Saul.AgregarProducto(globo, 7);

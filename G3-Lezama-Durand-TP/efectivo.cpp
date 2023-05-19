@@ -18,8 +18,8 @@ string efectivo::efectuar_pago()
 {
         stringstream salida;
 
-        salida << "usted realizo el pago con efectivo, un monto de: " << this->monto << "monto: " << this->monto_ingresado << " le devolvemos: " << this->vuelto << endl
-            << "los prodoctos ya comprados son: " << endl;
+        salida << "usted realizo el pago con efectivo, un monto de: " << this->monto << "monto: " << this->monto_ingresado <<"$"<< "le devolvemos : " << this->vuelto
+            << "$"<<endl << "los prodoctos ya comprados son: " << endl;
 
         for (producto i : this->carro->get_lista())
         {

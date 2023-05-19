@@ -12,7 +12,7 @@ Aplicacion::~Aplicacion()
 string Aplicacion::efectuar_pago()
 {
     stringstream salida;
-    salida << "usted realizo el pago con la app: " << this->nombreApp << " monto: " << this->monto << endl
+    salida << "usted realizo el pago con la app: " << this->nombreApp << " monto: " << this->monto <<"$"<< endl
         << "los prodoctos ya comprados son: " << endl;
 
     for (producto i : this->carro->get_lista())  
