@@ -17,6 +17,8 @@
 #include "efectivo.h"
 
 
+//si en efectivo el pago es menor 
+//static
 
 int main() {
 	list<producto> lista;
@@ -40,56 +42,95 @@ int main() {
 	//lista.push_back(d_chololate);
 
 	Clientes Saul(1, "saul Lezama", 95236478, "saul@gmail.com");
-
 	Clientes Emiliana(2, "emiliana janin", 30256478, "emiliana@gmail.com");
+	encargado Maria("Maria Durand", 98563214, "de lunes a domingo", "maria@gmail.com");
+	mostraddor Isabella("Isabella Ferrari", 94114300,"lunes a domingos", "Isabella@gmail.com",Saul.get_nro());
+
+	Isabella.LlamarCliente();
+
+	//for
 	try
 	{
 		Saul.AgregarProducto(globo, 7);
-		Saul.AgregarProducto(chupeta, 1);
-		Saul.AgregarProducto(vaso, 2);
-		Saul.AgregarProducto(m_cupcakes, 4);
 
-		Emiliana.AgregarProducto(caramelo, 1);
-		Emiliana.AgregarProducto(palillo, 10);
-		Emiliana.AgregarProducto(vaso,4);
 	}
 	catch (invalid_argument& e) {
 		cerr << e.what() << endl;
 
 	}
 
-	Emiliana.AlquilarDisfraz(rey, 1);
-
-	encargado Maria("Maria Durand", 98563214, "de lunes a domingo", "maria@gmail.com");
-	unsigned int metodo= Maria.cobrar();
-
-	carrito* c = Saul.get_carro();
-
-	unsigned int monto = c->get_monto();
-	//Pago *d;
-
-	do
+	try
 	{
-		if (metodo == 1)
-		{
-			Aplicacion app(monto, "mercado pago", c);
-			app.imprimir();
-		}
-		else if (metodo == 2)
-		{
-			unsigned int monto_i;
-			cout << "el monto es:"<<monto<<" ingrese su efectivo : " << endl;
-			cin >> monto_i;
-			efectivo dinero(monto, monto_i, c);
-			dinero.imprimir();
-		}
-		else if (metodo == 3)
-		{
-			Tarjeta tar(monto,"American", "santander", 123, true, c);
-			tar.imprimir();
-		}
-	}while(metodo!=1 && metodo != 2 && metodo != 3);
+		Saul.AgregarProducto(chupeta, 1);
 
-	delete c;
+	}
+	catch (invalid_argument& e) {
+		cerr << e.what() << endl;
+
+	}
+
+	try
+	{
+		Saul.AgregarProducto(vaso, 2);
+
+	}
+	catch (invalid_argument& e) {
+		cerr << e.what() << endl;
+
+	}
+	
+	try
+	{
+		Saul.AgregarProducto(m_cupcakes, 4);
+
+	}
+	catch (invalid_argument& e) {
+		cerr << e.what() << endl;
+
+	}
+
+	try
+	{
+		Emiliana.AgregarProducto(caramelo, 1);
+
+	}
+	catch (invalid_argument& e) {
+		cerr << e.what() << endl;
+
+	}
+
+	try
+	{
+		Emiliana.AgregarProducto(palillo, 10);
+
+	}
+	catch (invalid_argument& e) {
+		cerr << e.what() << endl;
+
+	}
+
+	try
+	{
+		Emiliana.AgregarProducto(vaso, 4);
+
+	}
+	catch (invalid_argument& e) {
+		cerr << e.what() << endl;
+
+	}
+	
+	unsigned int metodo= Maria.cobrar();
+	carrito* c = Saul.get_carro();
+	unsigned int monto = c->get_monto();
+	Maria.realizar_pago(metodo, monto, c);
+
+	Isabella.LlamarCliente();
+
+	metodo=Maria.cobrar();
+	Emiliana.AlquilarDisfraz(rey, "15/06/2023");
+	c = Emiliana.get_carro();
+	monto= c->get_monto();
+	Maria.realizar_pago(metodo, monto, c);
+
 	return 0;
 }

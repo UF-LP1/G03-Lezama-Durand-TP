@@ -23,7 +23,6 @@ Pago::Pago(unsigned int monto_p,carrito*& carro) :numero_de_orden(carro->get_ID(
 }
 
 Pago::~Pago(){
-    delete this->carro;
 
 }
 

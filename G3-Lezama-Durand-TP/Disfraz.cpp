@@ -83,7 +83,10 @@ void Disfraz::set_talle(char talle) {
  * @param codigo
  * @return void
  */
-void Disfraz::entregar_disfraz(string nombre, unsigned int codigo){
+void Disfraz::alquilar_disfraz(string fecha){
+    this->fecha_alquilar = fecha;
+
+    cout << "el disfraz esta alquilado para la fecha; " << fecha<<endl;
 
     return;
 }

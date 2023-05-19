@@ -40,7 +40,7 @@ public:
  * @param nombre
  * @param codigo
  */
-void entregar_disfraz(string nombre, unsigned int codigo);
+void alquilar_disfraz(string fecha);
 
     
 /**

@@ -32,6 +32,7 @@ unsigned int encargado::cobrar()
     cout << "2)Efectivo" << endl;
     cout << "3)Tarjeta" << endl;
     cin >> metodo_pago;
+
     return metodo_pago;
 }
 
@@ -41,15 +42,43 @@ string encargado::envolver_regalo()
     return x;
 }
 
-/**
- * @param monto
- * @return string
- */
+void encargado::realizar_pago(unsigned int metodo, unsigned int monto, carrito *&c) {
 
+	do
+	{
+		if (metodo == 1)
+		{
+			string nombreapp;
+			cout << "¿Con que app desea pagar?" << endl;;
+			cin >> nombreapp;
 
-/**
- * @param regalo
- */
+			Aplicacion app(monto, nombreapp, c);
+			app.imprimir();
+		}
+		else if (metodo == 2)
+		{
+			unsigned int monto_i;
+			cout << "el monto es: " << monto << " ingrese su efectivo: " << endl;
+			cin >> monto_i;
+
+			efectivo dinero(monto, monto_i, c);
+			dinero.imprimir();
+		}
+		else if (metodo == 3)
+		{
+			string n_tarjeta, banco;
+			unsigned int cod;
+			cout << "Ingrese en nombre de la tarjeta" << endl;
+			cin >> n_tarjeta;
+			cout << "Ingrese el banco" << endl;
+			cin >> banco;
+			cout << "Ingrese su codigo de seguridad" << endl;
+			cin >> cod;
+			Tarjeta tar(monto, n_tarjeta, banco, cod, true, c);
+			tar.imprimir();
+		}
+	} while (metodo != 1 && metodo != 2 && metodo != 3);
+}
 
 
 /**

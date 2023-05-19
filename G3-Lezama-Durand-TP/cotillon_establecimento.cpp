@@ -42,7 +42,7 @@ string cotillon_establecimento::abrir() {
  * @return void
  */
 string cotillon_establecimento::cerrar() {
-    string texto="el cotillon esta abierto";
+    string texto="el cotillon esta cerrado";
     return texto;
 }
 

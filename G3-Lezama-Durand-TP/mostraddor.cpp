@@ -28,7 +28,8 @@ mostraddor::~mostraddor(){
  */
 
 void mostraddor::LlamarCliente(){
-
+    cout << "cliente Numero: " << this->NroCliente << endl;;
+    this->NroCliente++;
 }
 
 unsigned int mostraddor::get_NroCliente()

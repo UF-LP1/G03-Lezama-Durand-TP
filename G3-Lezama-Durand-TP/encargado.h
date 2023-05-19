@@ -7,8 +7,11 @@
 #define _ENCARGADO_H
 
 #include "persona.h"
-#include "Pago.h"
+#include "Aplicacion.h"
+#include "efectivo.h"
+#include "tarjeta.h"
 #include "Producto.h"
+#include "carrito.h"
 
 
 class encargado: public persona {
@@ -32,6 +35,9 @@ string envolver_regalo();
  * @param horario
  */
 void set_horario(string horario);
+
+void realizar_pago(unsigned int metodo, unsigned int monto, carrito*& c);
+
 private: 
     string horario;
 };

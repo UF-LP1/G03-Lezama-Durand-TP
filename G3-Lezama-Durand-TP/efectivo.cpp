@@ -23,9 +23,8 @@ string efectivo::efectuar_pago()
 
         for (producto i : this->carro->get_lista())
         {
-            salida << i.get_nombre() << " " << i.get_precio_producto() << endl;
+            salida << "producto: " << i.get_nombre() << "     " << "Precio: $" << i.get_precio_producto() << endl;
         }
-
         return salida.str();
 }
 

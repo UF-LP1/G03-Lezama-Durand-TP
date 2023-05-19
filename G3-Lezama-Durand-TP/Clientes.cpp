@@ -36,12 +36,16 @@ void Clientes::AgregarProducto(producto Nombre, unsigned int cant){
 }
 
 
-void Clientes::AlquilarDisfraz(Disfraz Nombre, unsigned int cant){
+void Clientes::AlquilarDisfraz(Disfraz Nombre, string fecha) {
 
+	Nombre.alquilar_disfraz(fecha);
 
 }
 
 carrito* Clientes::get_carro()
 {
 	return &this->Micarrito;
+}
+unsigned int Clientes::get_nro() {
+	return this->Nro_cliente;
 }

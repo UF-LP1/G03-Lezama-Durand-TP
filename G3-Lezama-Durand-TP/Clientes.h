@@ -30,8 +30,10 @@ Clientes(unsigned int Nro, string nombre, unsigned int DNI, string Contacto);
  * @param nroCarrito
  */
 void AgregarProducto(producto Nombre, unsigned int cant);
-void AlquilarDisfraz(Disfraz Nombre, unsigned int cant);
+void AlquilarDisfraz(Disfraz Nombre, string fecha);
+
 carrito* get_carro();
+unsigned int get_nro();
 
 };
 
